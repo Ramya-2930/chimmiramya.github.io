@@ -1,40 +1,580 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramya Chimmi | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      .skill-card,
+      .project-card,
+      .certificate-card {
+        transition: 0.4s ease;
+      }
 
-<head>
-    <title>Ramya Portfolio</title>
-</head>
+      .skill-card:hover,
+      .project-card:hover,
+      .certificate-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+      }
+      body {
+        background: linear-gradient(to right, #0f172a, #1e293b);
+        color: white;
+        line-height: 1.6;
+      }
+      #typing::after {
+        content: "|";
+        animation: blink 0.7s infinite;
+      }
 
-<body>
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      .btn {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 28px;
+        background: linear-gradient(45deg, #38bdf8, #a855f7);
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.4s;
+      }
 
-    <h1>Ramya Chimmi</h1>
+      .btn:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 20px #38bdf8;
+      }
+      section {
+        animation: fadeIn 1s ease;
+      }
 
-    <h2>About Me</h2>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
 
-    <p>
-        I am a B.Tech student in Artificial Intelligence and Data Science.
-        Interested in Web Development and Data Analytics.
-    </p>
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      header {
+        backdrop-filter: blur(10px);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        scroll-behavior: smooth;
+      }
+      body {
+        background: #0f172a;
+        color: white;
+        line-height: 1.6;
+      }
 
-    <h2>Skills</h2>
+      header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(15, 23, 42, 0.95);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 10%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
 
-    <ul>
-        <li>Python</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Data Analytics</li>
-    </ul>
+      header h1 {
+        color: #38bdf8;
+        font-size: 28px;
+      }
 
-    <h2>Projects</h2>
+      nav a {
+        color: white;
+        margin-left: 20px;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 16px;
+      }
 
-    <p>Online Media Publishing System</p>
+      nav a:hover {
+        color: #38bdf8;
+      }
 
-    <p>Smart Campus Placement System</p>
+      section {
+        padding: 100px 10%;
+        min-height: 100vh;
+      }
 
-    <h2>Contact</h2>
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
 
-    <p>Email: yourmail@gmail.com</p>
+      .hero-text {
+        flex: 1;
+      }
 
-</body>
+      .hero-text h2 {
+        font-size: 50px;
+        margin-bottom: 10px;
+      }
 
+      .hero-text h3 {
+        font-size: 28px;
+        color: #38bdf8;
+        margin-bottom: 15px;
+      }
+
+      .hero-text p {
+        font-size: 18px;
+        max-width: 600px;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 28px;
+        background: #38bdf8;
+        color: #0f172a;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+        background: white;
+      }
+
+      .hero-image img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #38bdf8;
+        box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+      }
+
+      .social-icons {
+        margin-top: 25px;
+      }
+
+      .social-icons a {
+        color: white;
+        margin-right: 15px;
+        font-size: 24px;
+        transition: 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: #38bdf8;
+        transform: translateY(-5px);
+      }
+      .hero-image img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 8px solid #38bdf8;
+        animation: glow 3s infinite;
+      }
+
+      @keyframes glow {
+        0% {
+          border-color: #38bdf8;
+          box-shadow: 0 0 30px #38bdf8;
+        }
+
+        25% {
+          border-color: #ff69b4;
+          box-shadow: 0 0 30px #ff69b4;
+        }
+
+        50% {
+          border-color: #a855f7;
+          box-shadow: 0 0 30px #a855f7;
+        }
+
+        75% {
+          border-color: #22c55e;
+          box-shadow: 0 0 30px #22c55e;
+        }
+
+        100% {
+          border-color: #f97316;
+          box-shadow: 0 0 30px #f97316;
+        }
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 40px;
+        color: #38bdf8;
+      }
+
+      .about p {
+        text-align: center;
+        max-width: 900px;
+        margin: auto;
+        font-size: 18px;
+      }
+
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .skill-card {
+        background: #1e293b;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .skill-card p {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #555;
+        line-height: 1.5;
+      }
+      .skill-card p {
+        font-size: 14px;
+        margin-top: 8px;
+        color: white;
+        line-height: 1.5;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-10px);
+        background: #334155;
+      }
+
+      .skill-card i {
+        font-size: 40px;
+        color: #38bdf8;
+        margin-bottom: 10px;
+      }
+
+      .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .project-card {
+        background: #1e293b;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: 0.3s;
+      }
+
+      .project-card:hover {
+        transform: scale(1.03);
+      }
+
+      .project-content {
+        padding: 20px;
+      }
+
+      .project-content h3 {
+        color: #38bdf8;
+        margin-bottom: 10px;
+      }
+
+      .certificates {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .certificate-card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+      }
+      .certificate-card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+      }
+
+      .certificate-card h3 {
+        color: #38bdf8;
+      }
+
+      .contact-container {
+        text-align: center;
+      }
+
+      .contact-container p {
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #020617;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+        }
+
+        nav {
+          margin-top: 10px;
+        }
+
+        .hero {
+          flex-direction: column-reverse;
+          text-align: center;
+        }
+
+        .hero-text h2 {
+          font-size: 38px;
+        }
+
+        .hero-text h3 {
+          font-size: 22px;
+        }
+
+        .hero-image img {
+          width: 230px;
+          height: 230px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Chimmi Ramya</h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h2>Hi, I'm Ramya Chimmi</h2>
+        <h3 id="typing"></h3>
+        <p>
+          I am a B.Tech student specializing in Artificial Intelligence and Data
+          Science. Passionate about Data Analytics, Web Development, AI
+          Projects, and building modern digital experiences.
+        </p>
+        <a href="#contact" class="btn">Contact Me</a>
+
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/chimmiramya5825"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/Ramya-2930/chimmiramya.github.io"
+            ><i class="fab fa-github"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="c:\Users\admin\OneDrive\Pictures\WhatsApp Image 2025-03-31 at 16.39.58_a9901b9a.jpg"
+          alt="Profile"
+        />
+      </div>
+    </section>
+    <section class="about" id="about">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        I am currently pursuing B.Tech 4nd Year in Artificial Intelligence and
+        Data Science at SAI SPURTHI INSTITUTE OF TECHNOLOGY. I enjoy learning
+        modern technologies, creating responsive websites, exploring AI
+        concepts, and working on innovative projects. My goal is to become a
+        successful Data Analyst and Full Stack Developer.
+      </p>
+    </section>
+    <section id="skills">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-container">
+        <div class="skill-card">
+          <i class="fab fa-html5"></i>
+          <h3>HTML</h3>
+          <p>Used for creating the structure of web pages.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fab fa-css3-alt"></i>
+          <h3>CSS</h3>
+          <p>Used for styling and designing websites beautifully.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fab fa-js"></i>
+          <h3>JavaScript</h3>
+          <p>Used for making websites interactive and dynamic.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fab fa-python"></i>
+          <h3>Python</h3>
+          <p>
+            Programming language used for AI, data analysis, and automation.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-database"></i>
+          <h3>SQL</h3>
+          <p>Used for storing and managing database information.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Data Analytics</h3>
+          <p>Analyzing data to find insights and support decisions.</p>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Online Media Publishing System</h3>
+            <p>
+              A platform for managing and publishing digital media content with
+              modern features.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Smart Campus Placement System</h3>
+            <p>
+              A web-based platform to simplify placement activities and student
+              recruitment.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Personal Portfolio Website</h3>
+            <p>
+              A responsive personal portfolio website designed using HTML, CSS,
+              and JavaScript to showcase my skills and projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="certificates">
+      <h2 class="section-title">Certificates</h2>
+      <div class="certificates">
+        <div class="certificate-card">
+          <h3>Data Analytics Job Simulation</h3>
+          <p>
+            Completed a Deloitte data analytics job simulation focused on data
+            visualization, business insights, and analytical problem-solving.
+          </p>
+        </div>
+
+        <div class="certificate-card">
+          <h3>Introduction to AI</h3>
+          <p>
+            Completed an Introduction to AI course by Simplilearn, gaining
+            knowledge about artificial intelligence concepts, machine learning
+            basics, and real-world AI applications.
+          </p>
+        </div>
+
+        <div class="certificate-card">
+          <h3>Python Programming Language</h3>
+          <p>
+            Completed a Python Programming course from MindLuster, learning
+            Python basics, programming logic, data structures, and application
+            development concepts..
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="contact-container">
+        <p><i class="fas fa-envelope"></i> chimmiramya@gmail.com</p>
+        <p>
+          <i class="fab fa-linkedin"></i>
+          https://www.linkedin.com/in/chimmiramya5825
+        </p>
+        <p>
+          <i class="fab fa-github"></i
+          >https://github.com/Ramya-2930/chimmiramya.github.io
+        </p>
+
+        <a href="#" class="btn">Download Resume</a>
+      </div>
+    </section>
+    <footer>
+      <p>© 2026 Ramya Chimmi | All Rights Reserved</p>
+    </footer>
+    <script>
+      const text = [
+        "AI & Data Science Student",
+        "Web Developer",
+        "Data Analytics Enthusiast",
+        "Future Full Stack Developer",
+      ];
+
+      let count = 0;
+      let index = 0;
+      let currentText = "";
+      let letter = "";
+
+      (function type() {
+        if (count === text.length) {
+          count = 0;
+        }
+
+        currentText = text[count];
+        letter = currentText.slice(0, ++index);
+
+        document.getElementById("typing").textContent = letter;
+
+        if (letter.length === currentText.length) {
+          count++;
+          index = 0;
+          setTimeout(type, 1200);
+        } else {
+          setTimeout(type, 100);
+        }
+      })();
+    </script>
+  </body>
 </html>
